@@ -5,5 +5,9 @@
   "repository": "y",
   "author": "Thiago Moreira",
   "license": "n",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
 }
