@@ -1,6 +1,6 @@
-const express = require('expres');
+const express = require('express');
 
-const routes = express.routes();
+const routes = express.Router();
 
 routes.get('/', function(req,res){
     res.send('Teste');
