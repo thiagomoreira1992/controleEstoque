@@ -15,10 +15,11 @@ app.listen(3333);
     const Categoria = require('./models/categoria');
     const Material = require('./models/material');
     const Movimentacao = require('./models/movimentacao');
+    const Profissional = require('./models/profissional');
 
 
     try {
-        const resultado1 = await database.sync();
+        /*const resultado1 = await database.sync();
         console.log(resultado1);
         const resultado2 = await Categoria.sync();
         console.log(resultado2);
@@ -26,6 +27,8 @@ app.listen(3333);
         console.log(resultado3);
         const resultado4 = await Movimentacao.sync();
         console.log(resultado4);
+        const resultado5 = await Profissional.sync();
+        console.log(resultado5);
     } catch (error) {
         console.log(error);
     }
