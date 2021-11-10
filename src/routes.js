@@ -4,6 +4,8 @@ const categoriaController = require('./controllers/categoriaController');
 const routes = express.Router();
 const CategoriaController = require('./controllers/categoriaController');
 const ProfissionalController = require('./controllers/profissionalController');
+const MaterialController = require('./controllers/materialController');
+const MovimentacaoController = require('./controllers/movimentacaoController');
 
 routes.post('/criarCategoria', CategoriaController.criar);
 routes.get('/listarCategoria', CategoriaController.listarTodos);
@@ -14,6 +16,14 @@ routes.post('/criarProfissional', ProfissionalController.criar);
 routes.get('/listarProfissional', ProfissionalController.listarTodos);
 routes.post('/removerProfissional', ProfissionalController.deletar);
 routes.post('/alterarProfissional', ProfissionalController.alterar);
+
+routes.post('/criarMaterial', MaterialController.criar);
+routes.get('/listarMaterial', MaterialController.listarTodos);
+routes.post('/removerMaterial', MaterialController.deletar);
+routes.post('/alterarMaterial', MaterialController.alterar);
+
+routes.post('/criarMovimentacao', MovimentacaoController.criar);
+routes.get('/listarMovimentacao', MovimentacaoController.listarTodos);
 
 routes.get('/', function(req,res){
     res.send('Teste');

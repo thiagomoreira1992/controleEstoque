@@ -26,10 +26,10 @@ app.listen(3333);
         const resultado3 = await Material.sync();
         console.log(resultado3);
         const resultado4 = await Movimentacao.sync();
-        console.log(resultado4);
+        console.log(resultado4);/*
         const resultado5 = await Profissional.sync();
         console.log(resultado5);
     } catch (error) {
         console.log(error);
     }
-})();*/
+})();/**/
