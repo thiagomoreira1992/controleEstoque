@@ -7,7 +7,7 @@ class MovimentacaoController{
         const buscaMaterial = await Material.findOne({where: {lote: `${req.body.lote}`}});
         console.log(buscaMaterial);
         if(buscaMaterial === null){
-            return res.json('Material não encontrado!');
+            return res.json({status: 404, body: 'Material não encontrado!'});
         }else{            
             const movimentacao = await Movimentacao.create({
                 idMaterial: buscaMaterial.id,
@@ -23,7 +23,7 @@ class MovimentacaoController{
                     id: buscaMaterial.id
                 }
             })
-            return res.json(material + movimentacao);
+            return res.json({status: 200, body: `Movimentação feita em ${buscaMaterial.nome}`});
             //return res.json(movimentacao);
         }
     }
