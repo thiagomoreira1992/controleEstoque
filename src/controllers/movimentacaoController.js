@@ -1,5 +1,6 @@
 const Movimentacao = require('../models/movimentacao');
 const Material = require('../models/material');
+const sequelize = require('../db');
 
 class MovimentacaoController{
     
@@ -29,7 +30,11 @@ class MovimentacaoController{
     }
     
     async listarTodos(req,res){
-        const movimentacao = await Movimentacao.findAll();
+        //const movimentacao = await Movimentacao.findAll();
+        const movimentacao = await sequelize.query("SELECT movimentacaos.id, movimentacaos.\"idMaterial\", movimentacaos.quantidade, movimentacaos.lote, movimentacaos.profissional, movimentacaos.\"createdAt\", movimentacaos.\"updatedAt\" FROM movimentacaos inner JOIN materials ON materials.id = movimentacaos.\"idMaterial\";",{
+            model: Movimentacao,
+            mapToModel: true
+        });
         return res.json(movimentacao);
     }
 
